@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-3-19 17:12:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wx.exampeople.vo.ExamPeoplePo" table="exampeople">   
+     	<id name="id" type="java.lang.String">
+            <column name="id" />
+        </id>        
+        
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property> 
+        <property name="code" type="java.lang.String">
+            <column name="code" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="examtime" type="java.util.Date">
+            <column name="examtime" />
+        </property> 
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+             <property name="pic" type="java.lang.String">
+            <column name="pic" />
+        </property> 
+        <property name="jkzcode" type="java.lang.String">
+            <column name="jkzcode" />
+        </property>
+        <property name="enterid" type="java.lang.String">
+            <column name="enterid" />
+        </property>
+        <property name="entername" type="java.lang.String">
+            <column name="entername" />
+        </property>
+        <property name="enterlogo" type="java.lang.String">
+            <column name="enterlogo" />
+        </property>
+        <property name="profession" type="java.lang.String">
+            <column name="profession" />
+        </property>
+        <property name="proname" type="java.lang.String">
+            <column name="proname" />
+        </property>
+        <property name="isprinted" type="java.lang.Integer">
+            <column name="isprinted" />
+        </property>
+        
+        <property name="remark" type="java.lang.String">
+            <column name="remark" />
+        </property>
+        
+        <property name="regtime" type="java.util.Date">
+            <column name="regtime" />
+        </property>
+        <property name="updatetime" type="java.util.Date">
+            <column name="updatetime" />
+        </property>
+        
+        <property name="deleted" type="java.lang.Integer">
+            <column name="deleted" />
+        </property>
+    </class>
+</hibernate-mapping>

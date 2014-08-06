@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<import resource="config/beans-login.xml" />
+	<import resource="config/beans-enterprise.xml" />
+	<import resource="config/beans-exampeople.xml" />
+	<import resource="config/beans-user.xml" />
+	<import resource="config/beans-utils.xml" />
+	
+	<!--
+		导入spring的配置文件
+	-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/printer">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLMyISAMDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="jdbc.fetch_size">50</prop>
+				<prop key="jdbc.batch_size">50</prop>
+			</props>
+		</property>
+
+		<!-- hibernate的配置文件在此注册 -->
+		<property name="mappingResources">
+			<list>		
+				<value>com/wx/enterprise/vo/Enterprise.hbm.xml</value>
+				<value>com/wx/exampeople/vo/ExamPeople.hbm.xml</value>
+				<value>com/wx/exampeople/vo/ExamPeoplePo.hbm.xml</value>
+				<value>com/wx/exampeople/vo/Jkzseq.hbm.xml</value>
+				<value>com/wx/exampeople/vo/Profession.hbm.xml</value>
+				<value>com/wx/user/vo/User.hbm.xml</value>
+				<value>com/wx/user/vo/UserPo.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Hibernate 事务管理器 开始 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 配置事务管理拦截器 -->
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 配置事务拦截器代理,特别注意的是每个bean都需要在此注册 -->
+	<bean id="autoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<value>transactionInterceptor</value>
+		</property>
+		<property name="beanNames">
+			<list>
+				<idref bean="loginService" />
+				<idref bean="enterpriseService" />
+				<idref bean="examPeopleService" />
+				<idref bean="jkzseqService" />
+				<idref bean="professionService" />
+				<idref bean="userService" />
+			</list>
+		</property>
+	</bean>
+</beans>

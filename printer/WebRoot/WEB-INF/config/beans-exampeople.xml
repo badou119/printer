@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="examPeopleAction" class="com.wx.exampeople.action.ExamPeopleAction">
+		<property name="examPeopleService" ref="examPeopleService" />
+		<property name="enterpriseService" ref="enterpriseService" />
+		<property name="jkzseqService" ref="jkzseqService" />
+		<property name="professionService" ref="professionService" />
+	</bean>
+
+	<bean id="examPeopleService" class="com.wx.exampeople.service.ExamPeopleServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+	<bean id="jkzseqService" class="com.wx.exampeople.service.JkzseqServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="professionService" class="com.wx.exampeople.service.ProfessionServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

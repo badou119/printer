@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="exampeople" extends="struts-default">
+	
+		<action name="exampeopleList" class="examPeopleAction" method="list">
+		</action>
+		<action name="exampeopleToAdd" class="examPeopleAction" method="toAdd">
+			<result>jsp/exampeople/exampeople.jsp</result>
+		</action>
+		
+		<action name="toEditExampeople" class="examPeopleAction" method="toEdit">
+			<result>jsp/exampeople/exampeople.jsp</result>
+		</action>
+		<action name="deleteExampeople" class="examPeopleAction" method="delete">
+			<result>jsp/exampeople/exampeopleList.jsp</result>
+		</action>
+		<action name="editExampeople" class="examPeopleAction" method="edit">
+			<result>jsp/exampeople/exampeople.jsp</result>
+		</action>
+		<action name="addExampeople" class="examPeopleAction" method="add">
+			<result name="success">jsp/exampeople/exampeopleList.jsp</result>
+		</action>
+		
+		<action name="toCam" class="examPeopleAction" method="toCam">
+			<result>jsp/webcam.jsp</result>
+		</action>
+		<action name="toPrintPage" class="examPeopleAction" method="toPrintPage">
+			<result>jsp/exampeople/epPrintList.jsp</result>
+		</action>
+		<action name="uploadExamPic" class="examPeopleAction" method="uploadExamPic">
+		</action>
+		
+	</package>
+</struts>

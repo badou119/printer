@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	
+
+	<context-param>
+		 导入通讯录时，上传文件存储的路径 
+		<param-name>organizisionFileUp</param-name>
+		<param-value>C:\\printer\\upfile\\</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>AttachmentPath</param-name>
+		<param-value>d:\\attachment\\printer\\</param-value>
+	</context-param>
+	
+	<!-- 验证码
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.txl.action.ImageServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/imageServlet</url-pattern>
+	</servlet-mapping>
+ 	-->
+ 
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+		<!-- 声明session检查filter -->
+		<filter-name>session-filter</filter-name>
+		<filter-class>com.wx.common.utils.SessionFilter</filter-class>
+		<!-- 登陆页 -->
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/printer/login.jsp</param-value>
+		</init-param>
+		<!-- 不用检查session的页 -->
+		<init-param>
+			<param-name>excludePage</param-name>
+			<param-value>login.action,login.jsp,test.jsp,print.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>session-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+<!--
+	<error-page>
+		<error-code>404</error-code>
+		<location>/noFile.htm</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+-->
+
+</web-app>

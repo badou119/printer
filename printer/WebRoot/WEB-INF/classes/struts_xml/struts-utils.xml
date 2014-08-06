@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="utils" extends="struts-default">
+	
+		<action name="upload" class="importExcel">
+   			<result name="success">ImportExcel.jsp</result>  
+		</action>
+		
+		<action name="uploadPic" class="importExcel" method="uploadPic">
+		</action>
+
+		<action name="ImportE" class="importExcel" method="readExcel">
+		</action>
+
+		<action name="excelExport" class="excelExportAction" method="excelExport">
+		</action>
+		
+		<action name="excelExport-down" class="excelExportAction" method="down">
+		</action>
+		
+		<action name="excelExport-downError" class="excelExportAction" method="downError">
+		</action>
+		<action name="excelExport-downDept" class="excelExportAction" method="downDept">
+		</action>
+		
+	</package>
+</struts>

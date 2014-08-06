@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+ 	<bean id="importExcel" class="com.wx.common.action.ImportExcel">
+ 		<property name="examPeopleService" ref="examPeopleService" />
+ 		<property name="enterpriseService" ref="enterpriseService" />
+		<property name="jkzseqService" ref="jkzseqService" />
+		<property name="professionService" ref="professionService" />
+	</bean>
+	
+	<bean id="excelExportAction" class="com.wx.common.action.ExcelExportAction">
+	</bean>
+</beans>

@@ -1,0 +1,32 @@
+.inputButton{
+	border:1px solid #95B8E7;
+	background-color: #fcec85;/*#E0ECFF*/
+    background: -webkit-linear-gradient(top,#EFF5FF 0,#fcec85 100%);
+    background: -moz-linear-gradient(top,#EFF5FF 0,#fcec85 100%);
+    background: -o-linear-gradient(top,#EFF5FF 0,#fcec85 100%);
+    background: linear-gradient(to bottom,#EFF5FF 0,#fcec85 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#fcec85,GradientType=0);
+	color:#444;
+	width:80px;
+	height:28px;
+	border-radius:5px;
+}
+.divStyle{
+  background-color: #F5F5DC;
+  background: -webkit-linear-gradient(top,#F5F5DC 0,#F5F5DC 100%);
+  background: -moz-linear-gradient(top,#F5F5DC 0,#F5F5DC 100%);
+  background: -o-linear-gradient(top,#F5F5DC 0,#F5F5DC 100%);
+  background: linear-gradient(to bottom,#F5F5DC 0,#F5F5DC 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F5F5DC,endColorstr=#F5F5DC,GradientType=0);
+}
+.header{
+  background-color: #F5F5DC;
+  background: -webkit-linear-gradient(top,#F8F8F8 0,#F5F5DC 100%);
+  background: -moz-linear-gradient(top,#F8F8F8 0,#F5F5DC 100%);
+  background: -o-linear-gradient(top,#F8F8F8 0,#F5F5DC 100%);
+  background: linear-gradient(to bottom,#F8F8F8 0,#F5F5DC 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F8F8F8,endColorstr=#F5F5DC,GradientType=0);
+}

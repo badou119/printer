@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="enterprise" extends="struts-default">
+		<action name="enterpriseList" class="enterpriseAction" method="list">
+		</action>
+		
+		<action name="enterpriseToAdd" class="enterpriseAction" method="toAdd">
+			<result>jsp/enterprise/enterprise.jsp</result>
+		</action>
+		<action name="toEditEnterprise" class="enterpriseAction" method="toEdit">
+			<result>jsp/enterprise/enterprise.jsp</result>
+		</action>
+		<action name="deleteEnterprise" class="enterpriseAction" method="delete">
+			<result>jsp/enterprise/enterpriseList.jsp</result>
+		</action>
+		<action name="editEnterprise" class="enterpriseAction" method="edit">
+			<result>jsp/enterprise/enterprise.jsp</result>
+		</action>
+		<action name="addEnterprise" class="enterpriseAction" method="add">
+			<result name="success">jsp/enterprise/enterpriseList.jsp</result>
+		</action>
+		
+	</package>
+</struts>
