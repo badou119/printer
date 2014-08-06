@@ -45,6 +45,9 @@
         <property name="isprinted" type="java.lang.Integer">
             <column name="isprinted" />
         </property>
+        <property name="tocenter" type="java.lang.Integer">
+            <column name="tocenter" />
+        </property>
         
         <property name="remark" type="java.lang.String">
             <column name="remark" />

@@ -18,6 +18,7 @@ public class ExamPeople implements Serializable {
 	private String enterid;
 	private String profession;
 	private Integer isprinted;
+	private Integer tocenter;
 	private String remark;
 	private Date regtime;
 	private Date updatetime;
@@ -214,6 +215,18 @@ public class ExamPeople implements Serializable {
 	}
 	public void setJkzcode(String jkzcode) {
 		this.jkzcode = jkzcode;
+	}
+	/**
+	 * @return the tocenter
+	 */
+	public Integer getTocenter() {
+		return tocenter;
+	}
+	/**
+	 * @param tocenter the tocenter to set
+	 */
+	public void setTocenter(Integer tocenter) {
+		this.tocenter = tocenter;
 	}
 
 	

@@ -102,7 +102,8 @@ public class ExamPeopleAction extends ActionSupport {
 		examPeoplePo.setJkzcode(jkzcode);
 		
 		examPeoplePo.setExamtimeStr(Tools.formatDate(new Date(), Constants.FORMAT_YYYY_MM_DD));
-		
+		examPeoplePo.setIsprinted(0);
+		examPeoplePo.setTocenter(0);
 		HttpServletRequest request = ServletActionContext.getRequest();
 		List<Profession> proList =  professionService.select();
 		request.setAttribute("proList", proList);
@@ -293,10 +294,6 @@ public class ExamPeopleAction extends ActionSupport {
 		Base64.saveImage(imgdata, realpath + savefilepath);
 		logger.info("realpath+savefilepath=" + realpath + savefilepath);
 		
-//		ExamPeople examPeople = examPeopleService.load(exampeopleid);
-//		examPeople.setPic(savefilepath);
-//		examPeople.setUpdatetime(new Date());
-//		examPeopleService.add(examPeople);
 		String jsonData = "";
 		
 		if(StringUtils.isBlank(imgmsg)){
@@ -337,7 +334,8 @@ public class ExamPeopleAction extends ActionSupport {
 		examPeople.setPhone(examPeoplePo.getPhone());
 		examPeople.setProfession(examPeoplePo.getProfession());
 		examPeople.setRemark(examPeoplePo.getRemark());
-		
+		examPeople.setIsprinted(examPeoplePo.getIsprinted());
+		examPeople.setTocenter(examPeoplePo.getTocenter());
 		examPeople.setSex(examPeoplePo.getSex());
 		examPeople.setUpdatetime(new Date());
 
@@ -374,7 +372,8 @@ public class ExamPeopleAction extends ActionSupport {
 		examPeoplePo.setSex(examPeople.getSex());
 		examPeoplePo.setUpdatetime(examPeople.getUpdatetime());
 		examPeoplePo.setDeleted(examPeople.getDeleted());
-
+		examPeoplePo.setIsprinted(examPeople.getIsprinted());
+		examPeoplePo.setTocenter(examPeople.getTocenter());
 		examPeoplePo.setPic(examPeople.getPic());
 		examPeoplePo.setJkzcode(examPeople.getJkzcode());
 		
