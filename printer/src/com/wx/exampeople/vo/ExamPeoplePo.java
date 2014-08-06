@@ -28,6 +28,7 @@ public class ExamPeoplePo implements Serializable {
 	private String profession;
 	private String proname;
 	private Integer isprinted;
+	private Integer tocenter;
 	private String remark;
 	private Date regtime;
 	private Date updatetime;
@@ -285,6 +286,18 @@ public class ExamPeoplePo implements Serializable {
 	}
 	public void setExamtimeStr(String examtimeStr) {
 		this.examtimeStr = examtimeStr;
+	}
+	/**
+	 * @return the tocenter
+	 */
+	public Integer getTocenter() {
+		return tocenter;
+	}
+	/**
+	 * @param tocenter the tocenter to set
+	 */
+	public void setTocenter(Integer tocenter) {
+		this.tocenter = tocenter;
 	}
 
 	
